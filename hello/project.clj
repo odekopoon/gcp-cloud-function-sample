@@ -12,7 +12,7 @@
 
   :source-paths ["src"]
 
-  :clean-targets ["server.js"
+  :clean-targets ["index.js"
                   "target"]
 
   :cljsbuild {
@@ -26,10 +26,13 @@
                 :target :nodejs
                 :optimizations :none
                 :source-map true}}
+             ;; zip hello.zip index.js package.json
+             ;; execute function: hello.core.index
              {:id "prod"
               :source-paths ["src"]
               :compiler {
-                :output-to "server.js"
+                :output-to "index.js"
                 :output-dir "target/server_prod"
                 :target :nodejs
+                ;:hashbang false
                 :optimizations :simple}}]})

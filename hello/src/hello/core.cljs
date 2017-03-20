@@ -7,7 +7,7 @@
 ;
 ; @param {!Object} req Cloud Function request context.
 ; @param {!Object} res Cloud Function response context.
-(defn ^:export hello [req res]
+(defn ^:export index [req res]
   ;  Example input: {"message": "Hello!"}
   (if (= req.body.message js/undefined)
     ; This is an error case, as "message" is required.
